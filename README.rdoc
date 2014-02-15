@@ -1,28 +1,10 @@
-== README
+Homework 4
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In this homework assignment I made the 3 tables for my Users, Events, and Movies.  I made it so that if you go to the new page for any of the 3 controllers you get to fill out a form to create a new entry in the database and then it redirects to the index to show all entries in the database.  The landing page has links to the new paths for each table and a link to the index.  I mostly had trouble with the link_to syntax but I was able to figure it out pretty quickly with the documentation.
 
-Things you may want to cover:
+Schema:
+	Users name:string email:string password:string 
+	
+	Events event_name:string event_date:string vote_end_time:string creator_id:integer
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+	Movies title:string release_date:string num_votes:integer event_id:integer description:text

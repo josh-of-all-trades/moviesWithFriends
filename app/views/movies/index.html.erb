@@ -1,0 +1,14 @@
+<table>
+	<tr>
+		<td>Title</td>
+		<td>Release Date</td>
+		<td>Event</td>
+	</tr>
+	<%@movies.each do |movie|%>
+	<tr>
+		<td><%=movie.title %></td>
+		<td><%=movie.release_date %></td>
+		<td><%=movie.event_id %></td>
+	</tr>
+	<% end %>
+</table>
