@@ -1,5 +1,7 @@
 Homework 4
 
+http://serene-harbor-1038.herokuapp.com/
+
 In this homework assignment I made the 3 tables for my Users, Events, and Movies.  I made it so that if you go to the new page for any of the 3 controllers you get to fill out a form to create a new entry in the database and then it redirects to the index to show all entries in the database.  The landing page has links to the new paths for each table and a link to the index.  I mostly had trouble with the link_to syntax but I was able to figure it out pretty quickly with the documentation.
 
 Schema:
