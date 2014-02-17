@@ -1,17 +1,2 @@
-<%=form_for(@movie) do |f| %>
-	<div class=”field”>
-		<p>Title</p>
-		<%=f.text_field :title %>
-	</div>
-	<div class=”field”>
-		<p>Release Date</p>
-		<%=f.text_field :release_date %>
-	</div>
-	<div class=”field”>
-		<p>Event</p>
-		<%=f.collection_select :event_id, Event.all, :id, :event_name %>
-	</div>
-	<div class=”actions”>
-		<%=f.submit %>
-	</div>
-<% end %>
+<h1>Movies#new</h1>
+<p>Find me in app/views/movies/new.html.erb</p>
