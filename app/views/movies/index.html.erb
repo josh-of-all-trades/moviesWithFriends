@@ -6,9 +6,16 @@
 	</tr>
 	<%@movies.each do |movie|%>
 	<tr>
-		<td><%=movie.title %></td>
+		<td><%=link_to movie.title, movie_path(movie.id)%></td>
 		<td><%=movie.release_date %></td>
-		<td><%=movie.event_id %></td>
+		<td><%=Event.find(movie.event_id).event_name %></td>
+		<td><%=link_to "edit movie", edit_movie_path(movie.id)%></td>
+		<td><%=link_to "delete movie", movie, confirm:"Do you really want to delete this movie?", method: :delete%>
 	</tr>
+
 	<% end %>
 </table>
+
+
+<%=link_to "new movie", new_movie_path%>
+<%=link_to "Home menu", home_index_path%>

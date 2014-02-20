@@ -1,17 +1,5 @@
 MoviesWithFriends::Application.routes.draw do
   
-  get "movies/new"
-  get "movies/index"
-  get "movies/show"
-  get "movies/edit"
-  get "events/new"
-  get "events/index"
-  get "events/show"
-  get "events/edit"
-  get "users/new"
-  get "users/index"
-  get "users/show"
-  get "users/edit"
   get "home/index"
   resources :users
   resources :events

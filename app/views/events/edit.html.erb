@@ -1,2 +1,22 @@
-<h1>Events#edit</h1>
-<p>Find me in app/views/events/edit.html.erb</p>
+<%=form_for(@event) do |f| %>
+	<div class="field">
+		<p>Event Name</p>
+		<%=f.text_field :event_name%>
+	</div>
+	<div class="field">
+		<p>Event Date</p>
+		<%=f.text_field :event_date%>
+	</div>
+	<div class="field">
+		<p>End of Voting Time</p>
+		<%=f.text_field :vote_end_time%>
+	</div>
+	<div class="field">
+		<p>Creator</p>
+		<%=f.collection_select :creator_id, User.all, :id, :name%>
+	</div>
+
+	<div class="actions">
+		<%=f.submit %>
+	</div>
+<% end %>
