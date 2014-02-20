@@ -10,7 +10,7 @@
 		<td><%=movie.release_date %></td>
 		<td><%=Event.find(movie.event_id).event_name %></td>
 		<td><%=link_to "edit movie", edit_movie_path(movie.id)%></td>
-		<td><%=link_to "delete movie", movie, confirm:"Do you really want to delete this movie?", method: :delete%></td>
+		<td><%=button_to "delete movie", movie, confirm:"Do you really want to delete this movie?", method: :delete%></td>
 	</tr>
 
 	<% end %>
