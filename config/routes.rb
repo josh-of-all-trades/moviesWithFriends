@@ -1,6 +1,6 @@
 MoviesWithFriends::Application.routes.draw do
   
-  get "home/index"
+  resources :home
   resources :users
   resources :events
   resources :movies
