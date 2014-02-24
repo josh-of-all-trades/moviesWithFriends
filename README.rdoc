@@ -2,7 +2,7 @@ Homework 5
 
 http://serene-harbor-1038.herokuapp.com/
 
-In this homework assignment I added editing, deleting, and showing functionality for every entry in the table.  The show page shows the relevant information for what you are looking at.  The Edit page allows you to edit the information of a given entry and then takes you to the show page for that entry so you can see the changes have occured.  The delete function allows you to delete an entry.  I had some trouble getting the actual names of the belongs_to fields to show up and not the id's but I just had to think about it a little before I got it.
+In this homework assignment I added editing, deleting, and showing functionality for every entry in the table.  The show page shows the relevant information for what you are looking at.  The Edit page allows you to edit the information of a given entry and then takes you to the show page for that entry so you can see the changes have occured.  The delete function allows you to delete an entry.  I had some trouble getting the actual names of the belongs_to fields to show up and not the id's but I just had to think about it a little before I got it.  I also had a little trouble with deploying becasue some of my controllers acted funny, but I fixed it by running "heroku run rake db:setup".
 
 
 
