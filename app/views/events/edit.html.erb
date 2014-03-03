@@ -12,8 +12,7 @@
 		<%=f.text_field :vote_end_time%>
 	</div>
 	<div class="field">
-		<p>Creator</p>
-		<%=f.collection_select :creator_id, User.all, :id, :name%>
+		<%=f.hidden_field :creator_id, :value=>current_user.id%>
 	</div>
 
 	<div class="actions">

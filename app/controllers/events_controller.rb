@@ -5,11 +5,15 @@ class EventsController < ApplicationController
 
   def create
   	@event = Event.new(event_params)
-  	if @event.save
-  		redirect_to events_path
-  	else 
-  		render 'new'
-  	end
+  	if @event.creator_id != current_user.id
+      redirect_to 'new'
+    else
+      if @event.save
+  		  redirect_to events_path
+  	 else 
+    		render 'new'
+  	 end
+    end
   end
 
   def event_params
@@ -22,7 +26,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @eventUser = User.find(@event.creator_id)
+    #@eventUser = User.find(@event.creator_id)
   end
 
   def edit
@@ -31,10 +35,14 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    if @event.update_attributes(event_params)
-      redirect_to event_path(@event.id)
-    else 
+    if @event.creator_id != current_user.id
       render 'edit'
+    else
+      if @event.update_attributes(event_params)
+        redirect_to event_path(@event.id)
+      else 
+        render 'edit'
+      end
     end
   end
 

@@ -2,7 +2,7 @@
 	<h2><%=@event.event_name%></h2>
 	<p>Event date:  <%=@event.event_date%></p>
 	<p>Voting period ends:  <%=@event.vote_end_time%></p>
-	<p>Creator is:  <%=@eventUser.name%></p>
+	<p>Creator is:  <%=current_user.id%></p>
 	<%=link_to "edit event", edit_event_path(@event.id)%>
 	<%=link_to "index", events_path%>
 

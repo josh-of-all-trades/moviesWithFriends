@@ -1,7 +1,8 @@
 MoviesWithFriends::Application.routes.draw do
   
+  devise_for :users
   resources :home
-  resources :users
+  #resources :users
   resources :events
   resources :movies
   
