@@ -1,3 +1,9 @@
+Homework 6
+
+http://serene-harbor-1038.herokuapp.com/
+
+For this homework we were supposed to add another gem to our project and I added devise.  I picked devise because I knew I would need users to have accounts specific to them.  I might consider adding the gem that links with facebook also, but that would be after I submit this assignment.  The only problem I had was with rake db:migrate.  It would bring up errors because email was defined twice (once in my User model and once from devise).  However, after running rake db:reset (a suggestion on stackoverflow) things seemed to work out both locally and on heroku.
+
 Homework 5
 
 http://serene-harbor-1038.herokuapp.com/
