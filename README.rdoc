@@ -2,7 +2,7 @@ Homework 7
 
 http://serene-harbor-1038.herokuapp.com/
 
-For this homework we were supposed to add at least 3 validations (of at least 2 different kinds) to our project.  I added 3 validations to my events and these validations have 2 different types.  I also added 3 validations to my moives and 2 validations to my events.  I also fixed the problem where the event showed the id of the creating user as opposed to the user's name.  The only problem I had was trying to create a regex for email validation but after checking on StackOverflow I realized that it was a lot more work than I anticipated and would thus have to look into it more before applying it to my project.
+For this homework we were supposed to add at least 3 validations (of at least 2 different kinds) to our project.  I added 3 validations to my events and these validations have 2 different types.  I also added 3 validations to my moives and 2 validations to my events.  I also fixed the problem where the event showed the id of the creating user as opposed to the user's name.  The only problem I had was trying to create a regex for email validation but after checking on StackOverflow I realized that it was a lot more work than I anticipated and would thus have to look into it more before applying it to my project.  I also had some trouble with validating length of the movie description but I realized it was because I had forgotten to save that field and so it was an easy fix.
 
 Homework 6
 

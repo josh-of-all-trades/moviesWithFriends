@@ -2,7 +2,7 @@
 	<h2><%=@movie.title%></h2>
 	<p>Release Date: <%=@movie.release_date%></p>
 	<p>Number of votes = <%=@movie.num_votes%></p>
-	<p>Description = <%=@movie.description%></p>
+	<p>Description: <%=@movie.description%></p>
 	<p>Event name: <%=@movieEvent.event_name%></p>
 	<%=link_to "edit movie", edit_movie_path(@movie.id)%>
 	<%=link_to "index", movies_path%>
