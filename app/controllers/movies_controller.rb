@@ -13,7 +13,7 @@ class MoviesController < ApplicationController
   end
 
   def movie_params
-  	params.require(:movie).permit(:title, :release_date, :event_id)
+  	params.require(:movie).permit(:title, :release_date, :description, :event_id)
   end
 
   def index
