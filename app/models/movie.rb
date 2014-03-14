@@ -1,7 +1,7 @@
 class Movie < ActiveRecord::Base
   belongs_to :event
 
-  dateFormatValidation = /\d\d\\\d\d\\\d\d/
+  dateFormatValidation = /\d\d\/\d\d\/\d\d/
 
 
   validates :title, presence: true, uniqueness: true

@@ -7,5 +7,5 @@ class User < ActiveRecord::Base
 
 	#has_many :events, :dependent => :destroy
   validates :name, presence: true
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true
 end

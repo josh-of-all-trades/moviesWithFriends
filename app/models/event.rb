@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
   belongs_to :creator
   #has_many :movies, :dependent => :destroy
 
-  dateFormatValidation = /\d\d\\\d\d\\\d\d/
+  dateFormatValidation = /\d\d\/\d\d\/\d\d/
 
   validates :event_name, presence: true
   validates :event_date, format: {with: dateFormatValidation}
