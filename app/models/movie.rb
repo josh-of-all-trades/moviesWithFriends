@@ -6,7 +6,7 @@ class Movie < ActiveRecord::Base
 
   validates :title, presence: true, uniqueness: true
   validates :release_date, format: {with: dateFormatValidation}
-  validates :description, length: {within: 100..500}
+  validates :description, length: {within: => 100..500}
 
 
 end
