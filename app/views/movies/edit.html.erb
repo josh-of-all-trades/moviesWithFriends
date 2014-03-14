@@ -1,3 +1,15 @@
+<div class="error-msg">
+	<% if @movie.errors.any? %>
+	<ul>
+		<% @movie.errors.full_messages.each do |msg| %>
+		<li>
+			<%=msg %>
+		</li>
+		<% end %>
+	</ul>
+	<% end %>
+</div>
+
 <%=form_for(@movie) do |f| %>
 	<div class=”field”>
 		<p>Title</p>
@@ -7,6 +19,12 @@
 		<p>Release Date</p>
 		<%=f.text_field :release_date %>
 	</div>
+
+	<div class="field">
+		<p>Description</p>
+		<%=f.text_area :description %>
+	</div>
+
 	<div class=”field”>
 		<p>Event</p>
 		<%=f.collection_select :event_id, Event.all, :id, :event_name %>
@@ -15,3 +33,5 @@
 		<%=f.submit %>
 	</div>
 <% end %>
+
+<%=link_to "Home menu", home_index_path%>
