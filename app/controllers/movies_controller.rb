@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
   def create
   	@movie = Movie.new(movie_params)
   	if @movie.save
+      Notifications.new_movie(@movie).deliver
   		redirect_to movies_path
   	else 
   		render 'new'

@@ -2,8 +2,11 @@
 	<h2><%=@event.event_name%></h2>
 	<p>Event date:  <%=@event.event_date%></p>
 	<p>Voting period ends:  <%=@event.vote_end_time%></p>
-	<p>Creator is:  <%=current_user.id%></p>
-	<%=link_to "edit event", edit_event_path(@event.id)%>
+	<p>Creator is:  <%=User.find(@event.creator_id).name%></p>
+	<% if current_user.id == @event.creator_id%>
+		<td><%=link_to "edit event", edit_event_path(event.id)%></td>
+		<td><%=button_to "delete event", event, :confirm => "Do you really want to delete this event?", method: :delete%></td>
+		<% end %>
 	<%=link_to "index", events_path%>
 	<%=link_to "Home menu", home_index_path%>
 
