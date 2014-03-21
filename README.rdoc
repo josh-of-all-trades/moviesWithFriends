@@ -1,3 +1,9 @@
+Homework 8
+
+http://serene-harbor-1038.herokuapp.com/
+
+For this homework we were supposed to add at least one addon.  I decided to add sendgrid to my app.  For now it emails the creator of an event when a user adds a movie to their event.  I didn't really have any problems adding this addon to the app.  While the current set up does work, I'm also hoping to add checking so that a person doesn't get emailed if they add a movie to their own event and later on when I finish the voting system I hope to email the creator of the event with the result of the movie voting poll.
+
 Homework 7
 
 http://serene-harbor-1038.herokuapp.com/
