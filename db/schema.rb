@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224173540) do
+ActiveRecord::Schema.define(version: 20140405073656) do
+
+  create_table "attendees", force: true do |t|
+    t.integer  "attendee_id"
+    t.integer  "event_attending_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "attendees", ["attendee_id"], name: "index_attendees_on_attendee_id"
+  add_index "attendees", ["event_attending_id"], name: "index_attendees_on_event_attending_id"
 
   create_table "events", force: true do |t|
     t.string   "vote_end_time"

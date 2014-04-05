@@ -1,3 +1,179 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+ 
+/* ----------------------------------------------
+   HTML ELEMENTS
+------------------------------------------------- */
+
+html { background: #010000 url(../images/bg.gif) repeat-x; }
+
+body {
+	font: 11px/165% 'Lucida Grande', Geneva, Verdana, Arial, Helvetica, sans-serif;
+	color: #5E5E5E;
+	margin: 0; 	padding: 0; 
+	background: image-url("bg2.jpg") no-repeat center top;
+	text-align: center;
+}
+
+/* Links */
+a, a:visited {
+	text-decoration: none;
+	color: #BEBEBE;	
+}
+a:hover {
+	color: #fff;
+	border-bottom: 1px dotted #438800;
+}
+
+/* headers */
+h1, h2, h3 {
+	font-family: 'Trebuchet MS', Helvetica, Tahoma, Arial, Sans-serif;
+	color: #FAFAFA;
+}
+h1 {
+	font-size: 3.1em;	
+	letter-spacing: -2px;
+	padding: 15px 10px 5px 10px;	
+}
+h2 {
+	font-size: 2em;
+	color: #895F30;
+	padding: 20px 10px 5px 10px;	
+}
+h3 {
+	font-size: 1.7em;	
+	font-weight: normal;
+	padding: 20px 10px 5px 10px;		
+}
+
+p, dl { 
+	padding: 10px;
+ 	margin: 0; 
+ 	color: #fff;
+ }
+
+ul, ol {
+	margin: 10px 20px;
+	padding: 0 20px;
+}
+ul { list-style: none; }
+
+dt {
+  font-weight: bold;
+  color: #FAFAFA;
+}
+dd {
+  padding-left: 25px; 
+}
+
+/* images */
+img {
+	background: #1B1B1B;
+   border: 1px solid #1B1B1B;
+	padding: 6px;
+}
+img.float-right {
+  	margin: 5px 0px 10px 10px;  
+}
+img.float-left {
+  	margin: 5px 10px 10px 0px;
+}
+
+code {
+  	margin: 5px 0;
+  	padding: 15px;
+  	text-align: left;
+  	display: block;
+  	overflow: auto;  
+  	font: 500 1em/1.5em 'Lucida Console', 'Courier New', Monospace ;
+  	/* white-space: pre; */
+  	background: #070707;
+	border: 1px solid #111;   
+}
+acronym {
+  	cursor: help;
+  	border-bottom: 1px dotted #5B5B5B;
+}
+blockquote {
+	margin: 15px 10px;
+ 	padding: 10px 10px 10px 35px;  
+   background: #070707 url(../images/quote.gif) no-repeat 10px 10px;
+	border: 1px solid #111; 
+	font-weight: normal;
+	font-size: 17px;
+	line-height: 1.6em;
+	font-style: italic;
+	font-family: Georgia, 'Times New Roman', Times, serif;	
+	color: #808080;	
+}
+
+/* start - table */
+table {
+	margin: 15px 10px; 
+	border-collapse: collapse;			
+}
+th {
+	background: #000;
+	color: #FAFAFA;
+	height: 38px;
+	padding-left: 12px;
+	padding-right: 12px;	
+	text-align: left;
+	border-left: 1px solid #211E20;
+	border-right: 1px solid #211E20;
+	border-bottom: 1px solid #211E20; 
+	border-top: 1px solid #48780E;
+}
+tr {
+	color: #5b5b5b;
+	height: 34px;		
+}
+td {
+	padding-left: 12px;
+	padding-right: 12px;
+	border: 1px solid #111;	
+	background: #070707; 
+}
+/* end - table */
+
+
+/* form elements */
+form {
+	margin: 20px 10px; 
+	padding: 15px 25px 25px 20px; 
+	background: #070707; 	
+	border: 1px solid #111;	
+}
+form p {
+	border-bottom: 1px solid #101010;
+	padding: 12px 0 5px 0;	margin: 0;	
+}
+label {
+	font-weight: bold;	
+	color: #FAFAFA;
+}
+input, select, textarea {
+	margin: 5px 0;
+	padding: 5px;
+	font: normal 1em Verdana, Tahoma, sans-serif;
+	color: #6A6969;
+	background: #0C0C0C;  
+	border: 1px solid #1C1C1C;
+}
+option { padding-right: 0.5em; } 
+
+#name, #email, #message{
+	width: 480px;
+}
+input.button { 
+	font: bold 12px Arial, Verdana, Sans-serif; 
+	height: 30px;
+	padding: 2px 3px; 
+	margin-top: 8px;
+	color: #48780E;
+	background: #000;
+	border-width: 1px;
+  	border-style: solid;
+  	border-color: #1B1B1B;
+}
+
+
+

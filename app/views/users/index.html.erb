@@ -9,11 +9,13 @@
 		<td><%=link_to user.name, user_path(user.id)%></td>
 		<td><%=user.email %></td>
 		<td><%=user.password %></td>
-		<td><%=link_to "edit user", edit_user_path(user.id)%></td>
-		<td><%=button_to "delete user", user, confirm:"Do you really want to delete this user?", method: :delete%></td>
+		<%if current_user.id == user.id%>
+		<td><%=link_to "edit profile", edit_user_registration_path%></td>
+		<td><%=button_to "delete profile", user, confirm:"Do you really want to delete your profile?", method: :delete%></td>
+		<%end%>
+
 	</tr>
 	<% end %>
 </table>
 
-<%=link_to "new user", new_user_path%>
 <%=link_to "Home menu", home_index_path%>

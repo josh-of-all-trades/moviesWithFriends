@@ -16,9 +16,45 @@
 		<td><%=link_to "edit event", edit_event_path(event.id)%></td>
 		<td><%=button_to "delete event", event, :confirm => "Do you really want to delete this event?", method: :delete%></td>
 		<% end %>
+
+		<% if Attendee.where("attendee_id =? AND event_attending_id =?", current_user.id, event.event_id).empty?%>
+			<td>
+				<%=form_for(Attendee.new) do |f| %>
+					<div class="field">
+						<%=f.hidden_field :attendee_id, :value => current_user.id%>
+					</div>
+				
+					<div class="field">
+						<%=f.hidden_field :event_attending_id, :value => event.id%>
+					</div>
+
+					<div class="actions">
+						<%=f.submit "attend"%>
+					</div>
+
+				<%end%>
+			</td>
+		<%else%>
+			<td><%=button_to "unattend", attend, method: :delete%></td>
+		<%end%>
+
 	</tr>
 
 	<% end %>
+
+	<tr>
+
+		<td>attendee</td>
+		<td>event</td>
+		<%Attendee.all.each do |attend|%>
+			<tr>
+				<td><%=attend.attendee.name%></td>
+				<td><%=attend.event_attending.event_name%></td>
+
+			</tr>
+		<%end%>
+
+	</tr>
 </table>
 
 <%=link_to "new event", new_event_path%>
