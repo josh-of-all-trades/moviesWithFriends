@@ -17,7 +17,7 @@
 		<td><%=button_to "delete event", event, :confirm => "Do you really want to delete this event?", method: :delete%></td>
 		<% end %>
 
-		<% if Attendee.where("attendee_id =? AND event_attending_id =?", current_user.id, event.event_id).empty?%>
+		<% if Attendee.where("attendee_id =? AND event_attending_id =?", current_user.id, event.id).empty?%>
 			<td>
 				<%=form_for(Attendee.new) do |f| %>
 					<div class="field">
@@ -35,7 +35,7 @@
 				<%end%>
 			</td>
 		<%else%>
-			<td><%=button_to "unattend", attend, method: :delete%></td>
+			<td><%=button_to "unattend", Attendee.where("attendee_id = ? AND event_attending_id = ?", current_user.id, event.id).take!, method: :delete%></td>
 		<%end%>
 
 	</tr>
@@ -55,6 +55,7 @@
 		<%end%>
 
 	</tr>
+
 </table>
 
 <%=link_to "new event", new_event_path%>

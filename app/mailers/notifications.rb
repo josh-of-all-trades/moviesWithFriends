@@ -19,9 +19,9 @@ class Notifications < ActionMailer::Base
     @greeting = "Hey check this out!"
     @attendee = attend.attendee.name
     @id = attend.attendee_id
-    @eventid = attend.event_attending.event_id
+    @eventid = attend.event_attending_id
+    @eventtitle = Event.find(attend.event_attending_id).event_name
 
-
-    mail to: User.find(attend.event_attending.creator_id).name
+    mail to: User.find(attend.event_attending.creator_id).email
   end
 end

@@ -1,3 +1,9 @@
+Homework 9
+
+http://serene-harbor-1038.herokuapp.com/
+
+For this homework we were supposed to add 4 quieres.  I added one to sort the users on the index page in alphabetical order.  And I added 3 to the events.  One to sort the events into alphabetical order.  Another to find all users attending an event and to list 5 of them.  And then another to find all movies listed in an event and to display all of them.  It was pretty straightforward to do so, but the quieres returned more than I expected (an object with all the info of the user in addition to just what i wanted, the name) and it was confusing to fix.
+
 Homework 8
 
 http://serene-harbor-1038.herokuapp.com/
