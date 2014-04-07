@@ -4,6 +4,11 @@ http://serene-harbor-1038.herokuapp.com/
 
 For this homework we were supposed to add 4 quieres.  I added one to sort the users on the index page in alphabetical order.  And I added 3 to the events.  One to sort the events into alphabetical order.  Another to find all users attending an event and to list 5 of them.  And then another to find all movies listed in an event and to display all of them.
 
+1.)  User Controller Method index - sorts users alphabetically
+2.)  Event Controller Method index - sorts events alphabetically
+3.)  Event Controller Method show - shows 5 users attending 
+3.)  Event Controller Method show - shows movies up for voting
+
 Homework 8
 
 http://serene-harbor-1038.herokuapp.com/
