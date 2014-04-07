@@ -27,18 +27,11 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @attendees = Attendee.where(event_attending_id: @event.id)
-    @attendees_id = []
-    @attendees.each do |attend|
-      @attendees_id.push(attend.attendee_id)
-    end
-    @users = User.where(id: @attendees_id).order(:name).limit(5)
+    @users = User.where(id: @attendees).order(:name).limit(5)
 
     @movs = Movie.where(event_id: @event.id)
-    @movs_id = []
-    @movs.each do |mov|
-      @movs_id.push(mov.event_id)
-    end
-    @movies = Movie.where(id: @movs_id).order(:title)
+ 
+    @movies = Movie.where(id: @movs).order(:title)
 
   end
 
