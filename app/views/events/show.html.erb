@@ -10,7 +10,7 @@
 
 	<p>Some Attendees include</p>
 	<p>
-		<%= @users.each do |user|%>
+		<% @users.each do |user|%>
 			<%=user.name%>, 
 		<%end%>
 	</p>
@@ -18,7 +18,7 @@
 	<p>Movies to vote on</p>
 
 	<p>
-		<%= @movies.each do |mov|%>
+		<% @movies.each do |mov|%>
 			<%=mov.title%>, 
 		<%end%>
 	</p>
