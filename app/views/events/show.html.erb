@@ -8,12 +8,16 @@
 		<td><%=button_to "delete event", @event, :confirm => "Do you really want to delete this event?", method: :delete%></td>
 	<% end %>
 
-	<p>Some Attendees include</p>
-	<p>
-		<% @users.each do |user|%>
-			<%=user.name%>, 
-		<%end%>
-	</p>
+	<div class="attend">
+		<p>Some Attendees include</p>
+		<p>
+			<% @users.each do |user|%>
+				<%=user.name%>, 
+			<%end%>
+		</p>
+	</div>
+
+	<button class="btn">Hide Attending Users</button>
 
 	<p>Movies to vote on</p>
 
