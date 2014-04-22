@@ -6,6 +6,7 @@ MoviesWithFriends::Application.routes.draw do
   resources :events
   resources :movies
   resources :attendees, only: [:create, :destroy]
+  resources :likes, only: [:create, :destroy]
 
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
