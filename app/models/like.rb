@@ -4,6 +4,7 @@ class Like < ActiveRecord::Base
 
   validates :liker_id, uniqueness: {scope: :liked_id, message:"you already liked this movie"}
   
+  
 
 
 end
