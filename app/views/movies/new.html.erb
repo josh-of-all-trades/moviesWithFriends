@@ -10,6 +10,8 @@
 	<% end %>
 </div>
 
+<h1>You must be attending an event before you create a movie for it!</h1>
+
 <%=form_for(@movie) do |f| %>
 	<div class="field">
 		<p>Title</p>
@@ -29,6 +31,7 @@
 		<p>Event</p>
 		<%=f.collection_select :event_id, Event.all, :id, :event_name %>
 	</div>
+
 	<div class="actions">
 		<%=f.submit %>
 	</div>

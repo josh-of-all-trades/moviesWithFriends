@@ -1,7 +1,7 @@
 <div>
 	<h2><%=@movie.title%></h2>
 	<p>Release Date: <%=@movie.release_date%></p>
-	<p>Number of votes = <%=@movie.num_votes%></p>
+	<p>Number of votes = <%=Like.where("liked_id = ?", @movie.id).count%></p>
 	<p>Description: <%=@movie.description%></p>
 	<p>Event name: <%=@movieEvent.event_name%></p>
 	<%=link_to "edit movie", edit_movie_path(@movie.id)%>

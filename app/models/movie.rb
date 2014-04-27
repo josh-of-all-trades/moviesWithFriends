@@ -9,4 +9,8 @@ class Movie < ActiveRecord::Base
   validates :description, length: {within: 1000..1500}
 
 
+  def update_likes!
+    self.update_column(:num_votes, Like.count(:conditions => ("liked_id = ':id'")));
+  end
+
 end

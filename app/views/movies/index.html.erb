@@ -6,36 +6,40 @@
 	</tr>
 	<%@movies.each do |movie|%>
 	<tr>
-		<td><%=link_to movie.title, movie_path(movie.id)%></td>
-		<td><%=movie.release_date %></td>
-		<td><%=Event.find(movie.event_id).event_name %></td>
-		<td><%=link_to "edit movie", edit_movie_path(movie.id)%></td>
-		<td><%=button_to "delete movie", movie, confirm:"Do you really want to delete this movie?", method: :delete%></td>
-
-	
-
-		<% if Like.where("liker_id =? AND liked_id =?", current_user.id, movie.id).empty?%>
-			<td>
-				<%=form_for(Like.new) do |f| %>
-					<div class="field">
-						<%=f.hidden_field :liker_id, :value => current_user.id%>
-					</div>
-				
-					<div class="field">
-						<%=f.hidden_field :liked_id, :value => movie.id%>
-					</div>
-
-					<div class="actions">
-						<%=f.submit "like"%>
-					</div>
-
-				<%end%>
-			</td>
+		<%if Attendee.where("attendee_id =? AND event_attending_id =?", current_user.id, movie.event.id).empty?%>
 		<%else%>
-			<td><%=button_to "unlike", Like.where("liker_id = ? AND liked_id = ?", current_user.id, movie.id).take!, method: :delete%></td>
-		<%end%>
+			<td><%=link_to movie.title, movie_path(movie.id)%></td>
+			<td><%=movie.release_date %></td>
+			<td><%=Event.find(movie.event_id).event_name %></td>
+			<td><%=link_to "edit movie", edit_movie_path(movie.id)%></td>
+			<td><%=button_to "delete movie", movie, confirm:"Do you really want to delete this movie?", method: :delete%></td>
+	
+			<% if Date.strptime(Event.find(movie.event_id).vote_end_time, "%m/%d/%Y").strftime("%m/%d/%Y") > Time.now.strftime("%m/%d/%Y")%>
 
-	<% end %>
+
+				<% if Like.where("liker_id =? AND liked_id =?", current_user.id, movie.id).empty?%>
+					<td>
+						<%=form_for(Like.new) do |f| %>
+							<div class="field">
+								<%=f.hidden_field :liker_id, :value => current_user.id%>
+							</div>
+				
+							<div class="field">
+								<%=f.hidden_field :liked_id, :value => movie.id%>
+							</div>
+
+							<div class="actions">
+								<%=f.submit "like"%>
+							</div>
+						<%end%>
+					</td>
+				<%else%>
+					<td><%=button_to "unlike", Like.where("liker_id = ? AND liked_id = ?", current_user.id, movie.id).take!, method: :delete%></td>
+				<%end%>
+			<%end%>
+
+		<% end %>
+	<%end%>
 	</tr>
 
 	<tr>
@@ -59,3 +63,4 @@
 
 <%=link_to "new movie", new_movie_path%>
 <%=link_to "Home menu", home_index_path%>
+

@@ -3,7 +3,9 @@ class AttendeesController < ApplicationController
 	def create
 		@attendee = Attendee.new(attendee_params)
 		if @attendee.save
-			Notifications.attended(@attendee).deliver
+			if current_user.id != @attendee.attendee.id
+				Notifications.attended(@attendee).deliver
+			end
 			redirect_to events_path
 		else
 			redirect_to events_path
