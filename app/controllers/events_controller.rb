@@ -39,7 +39,9 @@ class EventsController < ApplicationController
     @movs.each do |mov|
       @movs_id.push(mov.id)
     end
-    @movies = Movie.where(id: @movs_id).order(:title)
+    @movies_pre = Movie.where(id: @movs_id)
+    @movies = @movies_pre.sort {|a, b| Like.where("liked_id = ?",b).count <=> Like.where("liked_id = ?", a).count}
+    #@movies = @movies_pre.sort_by {|a| Like.where("liked_id = ?", a).count}
 
   end
 

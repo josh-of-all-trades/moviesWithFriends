@@ -11,8 +11,8 @@ class Notifications < ActionMailer::Base
     @movie_name = movie.title
     @id = movie.id
     @event = Event.find(movie.event_id).event_name
-    @event_creator = User.find(Event.find(movie.event_id)).name
-    mail to: User.find(Event.find(movie.event_id)).email
+    @event_creator = User.find(Event.find(movie.event_id).creator_id).name
+    mail to: User.find(Event.find(movie.event_id).creator_id).email
   end
 
   def attended(attend)
