@@ -37,7 +37,7 @@ class EventsController < ApplicationController
     @movs = Movie.where(event_id: @event.id)
     @movs_id = []
     @movs.each do |mov|
-      @movs_id.push(mov.event_id)
+      @movs_id.push(mov.id)
     end
     @movies = Movie.where(id: @movs_id).order(:title)
 
