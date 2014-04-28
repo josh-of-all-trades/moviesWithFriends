@@ -1,5 +1,10 @@
+PLEASE NOTE
+URL CHANGE
+http://movieswithfriends.herokuapp.com/
+!!!!!
+
 Homework 10
-http://serene-harbor-1038.herokuapp.com/
+http://movieswithfriends.herokuapp.com/
 
 For this homework assignment we were supposed to add javascript/jquery to our app to add some functionality in some way.  I created a button that allows the user to toggle whether or not they want to see the attending users for an event.  The attending users are shown by default but clicking the button changes the test in the button and either hides or shows the attending users.
 
