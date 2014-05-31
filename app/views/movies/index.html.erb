@@ -15,7 +15,7 @@
 			<td><%=button_to "delete movie", movie, confirm:"Do you really want to delete this movie?", method: :delete%></td>
 	
 
-			<td><%Time.now%></td>
+			<td><%Time.now.strftime("%m/%d/%Y")%></td>
 
 			<% if Date.strptime(Event.find(movie.event_id).vote_end_time, "%m/%d/%Y").strftime("%m/%d/%Y") > Time.now.strftime("%m/%d/%Y")%>
 
